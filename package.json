@@ -1,0 +1,32 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hkuchynski/proshop-ecommerce.git"
+  },
+  "author": "Hanna Kuchynski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hkuchynski/proshop-ecommerce/issues"
+  },
+  "homepage": "https://github.com/hkuchynski/proshop-ecommerce#readme",
+  "description": "eCommerce application built with MERN stack.",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.9.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "dotenv": "^16.4.7",
+    "nodemon": "^3.1.9"
+  }
+}
