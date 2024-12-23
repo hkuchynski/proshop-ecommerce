@@ -17,6 +17,8 @@ import CartScreen from './screens/CartScreen.jsx';
 import LoginScreen from './screens/LoginScreen.jsx';
 import RegisterScreen from './screens/RegisterScreen.jsx';
 import ShippingScreen from './screens/ShippingScreen.jsx';
+import PaymentScreen from './screens/PaymentScreen.jsx';
+
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/styles/bootstrap.custom.css';
@@ -34,6 +36,7 @@ const router = createBrowserRouter(
 
       <Route path='' element={<PrivateRoute />}>
         <Route path='/shipping' element={<ShippingScreen />} />
+        <Route path='/payment' element={<PaymentScreen />} />
       </Route>
     </Route>
   )
