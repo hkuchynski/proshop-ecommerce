@@ -8,7 +8,7 @@ import Rating from '../components/Rating';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
-import { useGetProductsDetailsQuery } from '../slices/productsApiSlice';
+import { useGetProductDetailsQuery } from '../slices/productsApiSlice';
 import { addToCart } from '../slices/cartSlice';
 
 const ProductScreen = () => {
@@ -20,7 +20,7 @@ const ProductScreen = () => {
 
     const [qty, setQty] = useState(1);
     
-    const { data: product, isLoading, error } = useGetProductsDetailsQuery(productId);
+    const { data: product, isLoading, error } = useGetProductDetailsQuery(productId);
 
     const addToCartHandler = () => {
         dispatch(addToCart({ ...product, qty }));
