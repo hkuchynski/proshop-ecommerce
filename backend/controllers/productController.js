@@ -88,5 +88,6 @@ export {
     getProducts, 
     getProductById, 
     createProduct,
-    updateProduct 
+    updateProduct,
+    deleteProduct 
 };

@@ -6,8 +6,8 @@ import Loader from '../../components/Loader';
 // import Paginate from '../../components/Paginate';
 import {
     useGetProductsQuery,
-    useDeleteProductMutation,
     useCreateProductMutation,
+    useDeleteProductMutation
 } from '../../slices/productsApiSlice';
 import { toast } from 'react-toastify';
 
@@ -20,15 +20,14 @@ const ProductListScreen = () => {
         useDeleteProductMutation();
 
     const deleteHandler = async (id) => {
-        console.log('delete')
-        // if (window.confirm('Are you sure?')) {
-        //     try {
-        //         await deleteProduct(id);
-        //         refetch();
-        //     } catch (err) {
-        //         toast.error(err?.data?.message || err.error);
-        //     }
-        // }
+        if (window.confirm('Are you sure?')) {
+            try {
+                await deleteProduct(id);
+                refetch();
+            } catch (err) {
+                toast.error(err?.data?.message || err.error);
+            }
+        }
     };
 
     const [createProduct, { isLoading: loadingCreate }] =
@@ -60,6 +59,7 @@ const ProductListScreen = () => {
 
             {loadingCreate && <Loader />}
             {loadingDelete && <Loader />}
+            
             {isLoading ? (
                 <Loader />
             ) : error ? (
