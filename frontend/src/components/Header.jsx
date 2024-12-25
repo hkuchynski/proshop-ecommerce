@@ -33,12 +33,10 @@ const Header = () => {
         <header>
             <Navbar bg='dark' variant='dark' expand='md' collapseOnSelect>
                 <Container>
-                    {/* <LinkContainer to='/'> */}
-                        <Navbar.Brand>
-                            <img src={logo} alt='ProShop' />
+                    <Navbar.Brand as={Link} to='/'>
+                        <img src={logo} alt='ProShop' />
                             ProShop
-                        </Navbar.Brand>
-                    {/* </LinkContainer> */}
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     <Navbar.Collapse id='basic-navbar-nav'>
                         <Nav className='ms-auto'>
