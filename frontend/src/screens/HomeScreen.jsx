@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 import { useGetProductsQuery } from '../slices/productsApiSlice';
+import { Link } from 'react-router-dom';
 
 import Product from '../components/Product';
 import Loader from '../components/Loader';
@@ -17,9 +18,16 @@ const HomeScreen = () => {
         pageNumber,
     });
 
-
     return (
         <>
+            {!keyword ? (
+                // <ProductCarousel />
+                <></>
+            ) : (
+                <Link to='/' className='btn btn-light mb-4'>
+                    Go Back
+                </Link>
+            )}
             {isLoading ? (
                 <Loader />
             ) : error ? (
@@ -39,7 +47,7 @@ const HomeScreen = () => {
                     <Paginate
                         pages={data.pages}
                         page={data.page}
-                        //keyword={keyword ? keyword : ''}
+                        keyword={keyword ? keyword : ''}
                     />
                 </>
             )}
