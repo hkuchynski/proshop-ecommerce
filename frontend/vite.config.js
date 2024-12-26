@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react';
+
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -8,6 +9,7 @@ export default defineConfig({
     // proxy requests prefixed '/api'
     proxy: {
       '/api': 'http://localhost:4000',
+      '/uploads': 'http://localhost:4000',
     },
   },
 })

@@ -13,6 +13,7 @@ import {
     useGetProductDetailsQuery,
     useCreateReviewMutation 
 } from '../slices/productsApiSlice';
+import Meta from '../components/Meta';
 import { addToCart } from '../slices/cartSlice';
 
 const ProductScreen = () => {
@@ -56,6 +57,7 @@ const ProductScreen = () => {
 
     return (
         <>
+        <h1>I am here</h1>
             <Link className='btn btn-light my-3' to='/'>
                 Go Back
             </Link>
@@ -67,6 +69,7 @@ const ProductScreen = () => {
                 </Message>
             ) : (
                 <>
+                <Meta title={product.name} description={product.description} />
                 <Row>
                     <Col md={5}>
                         <Image src={product.image} alt={product.name} fluid></Image>
@@ -79,9 +82,9 @@ const ProductScreen = () => {
                             <ListGroup.Item>
                                 <Rating value={product.rating} text={`${product.numReviews} reviews`} />
                             </ListGroup.Item>
-                            {/* <ListGroup.Item>
+                            <ListGroup.Item>
                                 Price: ${product.price}
-                            </ListGroup.Item> */}
+                            </ListGroup.Item>
                             <ListGroup.Item>
                                 Description: {product.description}
                             </ListGroup.Item>

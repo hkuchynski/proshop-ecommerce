@@ -49,7 +49,8 @@ export const {
     removeFromCart,
     saveShippingAddress,
     savePaymentMethod,
-    clearCartItems
+    clearCartItems,
+    resetCart
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

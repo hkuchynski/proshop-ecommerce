@@ -6,9 +6,7 @@ import {
   Route,
   RouterProvider
 } from 'react-router-dom';
-
-import { Provider } from 'react-redux';
-import store from '../src/store.js';
+import { HelmetProvider } from 'react-helmet-async';
 
 import App from './App.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
@@ -30,6 +28,9 @@ import UserListScreen from './screens/admin/UserListScreen.jsx';
 import UserEditScreen from './screens/admin/UserEditScreen.jsx';
 
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+import { Provider } from 'react-redux';
+
+import store from '../src/store.js';
 
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -77,10 +78,12 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Provider store={store}>
-      <PayPalScriptProvider deferLoading={true}>
-        <RouterProvider router={router}/>
-      </PayPalScriptProvider>
-    </Provider>
+    <HelmetProvider>
+      <Provider store={store}>
+        <PayPalScriptProvider deferLoading={true}>
+          <RouterProvider router={router}/>
+        </PayPalScriptProvider>
+      </Provider>
+    </HelmetProvider>
   </StrictMode>,
 );
