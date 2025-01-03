@@ -57,7 +57,6 @@ const ProductScreen = () => {
 
     return (
         <>
-        <h1>I am here</h1>
             <Link className='btn btn-light my-3' to='/'>
                 Go Back
             </Link>
